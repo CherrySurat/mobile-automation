@@ -1,3 +1,21 @@
 {
-  "extends": "@pomelofashion/node"
+  "extends": [
+      "@pomelofashion/eslint-config-node",
+      "plugin:cypress/recommended"
+  ],
+  "plugins": [
+      "cypress"
+  ],
+  "rules": {
+      "import/prefer-default-export": "off",
+      "indent": [
+          "error",
+          2,
+          {
+              "SwitchCase": 1,
+              "flatTernaryExpressions": true,
+              "offsetTernaryExpressions": true
+          }
+      ]
+  }
 }

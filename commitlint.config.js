@@ -16,7 +16,7 @@ module.exports = {
         'PRTR-',
         'PFMT-',
         'WEBS-',
-        'DVPS-'
+        'QAFE-'
       ]
     }
   },
