@@ -1,0 +1,92 @@
+{
+  "name": "@pomelofashion/seed-npm-module",
+  "version": "1.0.0",
+  "description": "Pomelo Seed NPM Module",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=12.14.0",
+    "npm": ">=6.7.0"
+  },
+  "scripts": {
+    "lint": "eslint . --max-warnings=0",
+    "test": "jest -i ./test",
+    "release": "standard-version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pomelofashion/seed-npm-module.git"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "config",
+    "pomelo"
+  ],
+  "homepage": "https://github.com/pomelofashion/seed-npm-module",
+  "devDependencies": {
+    "@semantic-release/git": "9.0.0",
+    "@semantic-release/release-notes-generator": "9.0.2",
+    "eslint": "7.25.0",
+    "jest": "^26.6.3",
+    "standard-version": "^9.2.0"
+  },
+  "dependencies": {
+    "@pomelofashion/eslint-config-node": "1.1.0",
+    "prettier": "2.2.1"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "testEnvironment": "node"
+  },
+  "release": {
+    "plugins": [
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "preset": "conventionalcommits",
+          "releaseRules": [
+            {
+              "breaking": true,
+              "release": "major"
+            },
+            {
+              "revert": true,
+              "release": "patch"
+            },
+            {
+              "type": "feat",
+              "release": "minor"
+            },
+            {
+              "type": "fix",
+              "release": "patch"
+            },
+            {
+              "type": "docs",
+              "release": "patch"
+            },
+            {
+              "type": "style",
+              "release": "patch"
+            },
+            {
+              "type": "refactor",
+              "release": "patch"
+            },
+            {
+              "type": "perf",
+              "release": "patch"
+            }
+          ]
+        }
+      ],
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/github",
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ]
+  }
+}
